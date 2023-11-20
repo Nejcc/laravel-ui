@@ -24,3 +24,17 @@ import ExampleComponent from './components/ExampleComponent.vue';
 export default function registerComponents(app) {
     app.component('example-component', ExampleComponent);
 }
+
+/**
+ * The following block of code may be used to automatically register your
+ * Vue components. It will recursively scan this directory for the Vue
+ * components and automatically register them with their "basename".
+ *
+ * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
+ * The 'registerGlobalMethods' is imported to add globally accessible methods to the Vue application.
+ * These methods provide shared functionality across various components, aiding in maintaining a DRY codebase.
+ */
+
+// Object.entries(import.meta.glob('./**/*.vue', { eager: true })).forEach(([path, definition]) => {
+//     app.component(path.split('/').pop().replace(/\.\w+$/, ''), definition.default);
+// });
